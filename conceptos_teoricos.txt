@@ -1,0 +1,57 @@
+CONCEPTOS TEÓRICOS DE MATRICES
+===============================
+
+1. MATRIZ
+---------
+Definición: Una matriz es un arreglo rectangular de números dispuestos en filas y columnas.
+Notación: A = [aᵢⱼ] donde i es la fila y j es la columna
+Dimensión: m × n (m filas, n columnas)
+
+2. DETERMINANTE
+--------------
+Definición: El determinante es un número asociado a matrices cuadradas que indica:
+- Si la matriz es invertible (det ≠ 0)
+- El factor de escala de la transformación lineal
+- El volumen (con signo) del paralelepípedo formado por los vectores fila
+
+Métodos de cálculo:
+a) Cofactores (expansión de Laplace):
+   det(A) = Σⱼ (-1)^(1+j) * a₁ⱼ * det(M₁ⱼ)
+   donde M₁ⱼ es la submatriz eliminando fila 1 y columna j
+
+b) Eliminación Gaussiana:
+   det(A) = producto de los pivotes después de la eliminación
+   Cada intercambio de filas multiplica el determinante por -1
+
+3. MATRIZ INVERSA
+----------------
+Definición: A⁻¹ es la matriz tal que A * A⁻¹ = A⁻¹ * A = I
+Cálculo: A⁻¹ = (1/det(A)) * adj(A)
+donde adj(A) es la transpuesta de la matriz de cofactores
+
+4. SISTEMAS DE ECUACIONES
+------------------------
+Forma matricial: AX = B
+- Si A es invertible: X = A⁻¹B
+- Método de Cramer: xᵢ = det(Aᵢ)/det(A)
+  donde Aᵢ es A con la columna i reemplazada por B
+
+5. VALORES PROPIOS
+-----------------
+Definición: λ es valor propio si existe v ≠ 0 tal que Av = λv
+Ecuación característica: det(A - λI) = 0
+Aplicaciones: Estabilidad de sistemas, análisis de componentes principales
+
+6. DESCOMPOSICIÓN LU
+-------------------
+A = L * U donde:
+- L: matriz triangular inferior (Lower)
+- U: matriz triangular superior (Upper)
+Aplicación: Resolver múltiples sistemas con la misma matriz A
+
+7. APLICACIONES PRÁCTICAS
+------------------------
+- Regresión lineal: (X^T X) β = X^T y
+- Transformaciones geométricas: rotación, escala, traslación
+- Cadenas de Markov: matrices de transición
+- Criptografía: cifrado con matrices
