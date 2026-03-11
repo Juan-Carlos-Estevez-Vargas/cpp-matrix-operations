@@ -209,3 +209,31 @@ void verificarPropiedadesValoresPropios(double A[][MAX_COLUMNAS], int n) {
         }
     }
 }
+
+/**
+ * NOMBRE: calcularTraza
+ * PROPÓSITO: Calcula la traza de una matriz cuadrada
+ *
+ * EXPLICACIÓN:
+ * La traza de una matriz es la suma de los elementos
+ * de su diagonal principal.
+ *
+ * tr(A) = A₁₁ + A₂₂ + ... + Aₙₙ
+ *
+ * PROPIEDAD IMPORTANTE:
+ * La traza es igual a la suma de los valores propios.
+ *
+ * @param A Matriz cuadrada
+ * @param n Dimensión de la matriz
+ * @return Valor de la traza
+ */
+double calcularTraza(double A[][MAX_COLUMNAS], int n) {
+
+    double traza = 0.0;
+
+    for (int i = 0; i < n; i++) {
+        traza += A[i][i];
+    }
+
+    return traza;
+}
