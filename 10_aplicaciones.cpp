@@ -123,3 +123,29 @@ void cadenaMarkov(double P[][MAX_COLUMNAS], double estadoInicial[],
         estadoFinal[i] = resultado[i][0];
     }
 }
+
+/**
+ * NOMBRE: calcularTranspuesta
+ * PROPÓSITO: Calcula la transpuesta de una matriz
+ *
+ * EXPLICACIÓN:
+ * La transpuesta de una matriz A se obtiene intercambiando
+ * filas por columnas:
+ *
+ * AT[i][j] = A[j][i]
+ *
+ * @param A Matriz original
+ * @param AT Matriz transpuesta
+ * @param filas Número de filas de A
+ * @param columnas Número de columnas de A
+ */
+void calcularTranspuesta(double A[][MAX_COLUMNAS], 
+                         double AT[][MAX_COLUMNAS], 
+                         int filas, int columnas) {
+
+    for (int i = 0; i < filas; i++) {
+        for (int j = 0; j < columnas; j++) {
+            AT[j][i] = A[i][j];
+        }
+    }
+}
